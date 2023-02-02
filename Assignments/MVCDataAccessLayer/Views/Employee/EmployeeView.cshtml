@@ -1,0 +1,42 @@
+﻿@using MVCDataAccessLayer.ViewModel
+
+@model EmployeeViewModel
+@{
+    ViewBag.Title = "EmployeeView";
+}
+<a href="/Employee/AddNew">Add New Employee</a>
+<h2>Employee View</h2>
+
+
+
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetEmployees</title>
+</head>
+<body>
+    <div>
+        <table border="1">
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Salary</th>
+            </tr>
+            @foreach (EmployeeViewModel item in Model.MyEmployees)
+            {
+                <tr>
+                    <td>@item.EmployeeId</td>
+                    <td>@item.EmployeeName</td>
+                    <td style="background-color:@item.SalaryColor">
+                        @item.Salary
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
